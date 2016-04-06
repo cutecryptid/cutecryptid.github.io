@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 	function resizeProjects(){
 		var wheight = $(window).height();
-		$(".project").css('height', (wheight*0.25));
+		$(".project").css('height', (wheight*0.35));
 	}
 
 	function fixTitle(section){
