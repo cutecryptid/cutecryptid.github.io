@@ -52,6 +52,7 @@ $(document).ready(function() {
 	resizeSections();
 	fixTitle("#about");
 	fixTitle("#projects");
+	fixTitle("#contact");
 	fixNav();
 
 	$(window).resize(function(event) {
@@ -59,6 +60,7 @@ $(document).ready(function() {
 		resizeProjects();
 		fixTitle("#about");
 		fixTitle("#projects");
+		fixTitle("#contact");
 		fixNav();
 	});
 
@@ -67,6 +69,11 @@ $(document).ready(function() {
 		resizeProjects();
 		fixTitle("#about");
 		fixTitle("#projects");
+		fixTitle("#contact");
 		fixNav();
 	});
+
+
+
+
 });

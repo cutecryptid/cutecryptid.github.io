@@ -102,6 +102,7 @@ a, a:visited, a:hover, a:active {
 	padding: 110px;
 }
 
+
 #projects .section-title{
 	background: #FFF;
 }
@@ -111,21 +112,39 @@ a, a:visited, a:hover, a:active {
 	background: #333;
 }
 
+#contact .section-title{
+	background: #333;
+}
+
+
+#contact .section-content{
+	background: #FFF;
+}
+
+#contact .section-title .title{
+	color: #FFF;
+}
+
+#outer-space{
+
+}
+
+
 #projects .section-content .project{
 	margin: 0;
 	position: relative;
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-size: 110%;
-	transition: background-size 2s ease-in;
-	-moz-transition: background-size 2s ease-in;
-	-ms-transition: background-size 2s ease-in;
-	-o-transition: background-size 2s ease-in;
-	-webkit-transition: background-size 2s ease-in;
+	background-size: auto 100%;
+	transition: background-size 3s ease-in;
+	-moz-transition: background-size 3s ease-in;
+	-ms-transition: background-size 3s ease-in;
+	-o-transition: background-size 3s ease-in;
+	-webkit-transition: background-size 3s ease-in;
 }
 
 #projects .section-content .project:hover{
-	background-size: 150%;
+	background-size: auto 150%;
 	transition: background-size 5s ease-in;
 	-moz-transition: background-size 5s ease-in;
 	-ms-transition: background-size 5s ease-in;
@@ -133,15 +152,24 @@ a, a:visited, a:hover, a:active {
 	-webkit-transition: background-size 5s ease-in;
 }
 
-#projects .section-content .project .project-name{
+#projects .section-content .project .description{
 	margin: 0;
 	position:absolute;
-	top: 30%;
+	bottom:10px;
+	right:10px;
+	padding: 20px;
 	color: #F05286;
 	font-weight: lighter;
-	font-size: 30pt;
 	text-align: center;
-	width: 100%;
+	text-shadow: 0px 0px 3px #000000;
+
+}
+
+#projects .section-content .project .description .project-name{
+	font-weight: lighter;
+	text-align: center;
+	margin: 5px;
+	font-size: 30pt;
 }
 
 #aestudio{
