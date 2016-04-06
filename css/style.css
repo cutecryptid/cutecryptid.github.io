@@ -196,3 +196,33 @@ a, a:visited, a:hover, a:active {
 	border-radius: 100%;
 	border: 10px solid #F05286;
 }
+
+@media screen and (min-width: 480px){
+    .section-title{
+		display: inline-block;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		z-index: 200;
+	}
+
+	.section-title .title{
+		position: absolute;
+		bottom: 50px;
+		right: 0px;
+		left: 0px;
+		text-align: center;
+		margin: 0;
+		font-family: "Open Sans", sans-serif;
+		font-weight: lighter;
+		font-size: 50pt;
+	}
+
+	.section-content{
+		display: inline-block;
+		width: 100%;
+		position: relative;
+		left: 30%;
+		z-index: 100;
+	}
+}
