@@ -364,7 +364,7 @@ box-shadow: inset 0px 2px 10px 0px rgba(0,0,0,0.5);
 	}
 
 	.col-half, .col-third{
-		width: 100%;
+		width: 95%;
 		display: block;
 		vertical-align: top;
 	}
