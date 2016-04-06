@@ -299,6 +299,15 @@ box-shadow: inset 0px 2px 10px 0px rgba(0,0,0,0.5);
 	border: 10px solid #F05286;
 }
 
+		#projects .section-content .row{
+		padding: 0;
+	}
+
+.section-content .row a{
+	color: #F05286;
+	font-weight: bold;
+}
+
 @media screen and (max-width: 800px){
     .section-title{
 		display: inline-block;
