@@ -7,6 +7,11 @@ $(document).ready(function() {
 		$(".section-content").css('min-height', wheight);
 	}
 
+	function resizeProjects(){
+		var wheight = $(window).height();
+		$(".project").css('height', (wheight*0.25));
+	}
+
 	function fixTitle(section){
 		var sectionHeight = $(section).outerHeight();
 		var sectionScroll = $(section).offset().top;
@@ -25,45 +30,43 @@ $(document).ready(function() {
 			});
 		}
 	}
-	
 
+	function fixNav(){
+		var sectionHeight = $("#about").outerHeight();
+		var sectionScroll = $("#about").offset().top;
+		var windowHeight = $(window).height();
+		var windowScroll = $(window).scrollTop();
+		if (windowScroll >= sectionScroll){
+			$("#menu").css({
+				position: 'fixed',
+				top: 0
+			});
+		} else {
+			$("#menu").css({
+				position: 'relative',
+				top: 'initial'
+			});
+		}
+	}
+	
 	resizeSections();
 	fixTitle("#about");
 	fixTitle("#projects");
+	fixNav();
 
 	$(window).resize(function(event) {
 		resizeSections();
+		resizeProjects();
+		fixTitle("#about");
+		fixTitle("#projects");
+		fixNav();
 	});
 
 	$(window).scroll(function(event) {
+		resizeSections();
+		resizeProjects();
 		fixTitle("#about");
 		fixTitle("#projects");
+		fixNav();
 	});
 });
-
-
-
-// var o = (t.extend({}, t.fn.MDChapter.defaults, n), t(e)),
-//     i = t(".section-title", o),
-//     a = (t(".section-content", o), function() {
-//         r()
-//     }),
-//     r = function() {
-//         t(window).on("scroll", c), t(window).on("resize", c), c(null)
-//     },
-//     c = function() {
-//         var e = o.outerHeight(),
-//             n = o.offset().top,
-//             a = t(window).height(),
-//             r = t(window).scrollTop();
-//         if (r >= n && n + e - a >= r) i.addClass("title--fixed").css({
-//             top: 0
-//         });
-//         else {
-//             var c = r - n;
-//             c = Math.max(0, c), c = Math.min(e - a, c), i.removeClass("title--fixed").css({
-//                 top: c
-//             })
-//         }
-//     };
-// a()

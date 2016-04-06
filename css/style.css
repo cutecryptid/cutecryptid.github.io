@@ -4,6 +4,7 @@ body{
 	padding: 0;
 	font-family: "Open Sans", sans-serif;
 	color: #222;
+	overflow-x: hidden;
 }
 
 a, a:visited, a:hover, a:active {
@@ -14,17 +15,24 @@ a, a:visited, a:hover, a:active {
 #header{
 	display: block;
 	position: relative;
-	height: 300px;
+	height: 250px;
 	width: 100%;
 	background: #222;
+	background-image: url('../img/tricre_logo.png');
+	background-repeat: no-repeat;
+	background-size: 50%;
+	background-position: center, center;
 }
 
 #menu{
-	position: absolute;
-	right: 10px;
-	bottom: 10px;
+	position: relative;
+	display: block;
+	width: 100%;
+	padding-right: 10px;
 	text-align: right;
+	background-color: #222;
 	color: #DDD;
+	z-index: 300;
 }
 
 #menu a{
@@ -33,7 +41,7 @@ a, a:visited, a:hover, a:active {
 
 #menu ul{
 	margin: 0;
-	padding: 0;
+	padding: 10px;
 }
 
 #menu ul li{
@@ -79,7 +87,7 @@ a, a:visited, a:hover, a:active {
 }
 
 #about .section-title{
-	background: #CB99CC;
+	background: #F05286;
 }
 
 #about .section-title .title{
@@ -94,9 +102,6 @@ a, a:visited, a:hover, a:active {
 	padding: 110px;
 }
 
-
-
-
 #projects .section-title{
 	background: #FFF;
 }
@@ -106,11 +111,60 @@ a, a:visited, a:hover, a:active {
 	background: #333;
 }
 
+#projects .section-content .project{
+	margin: 0;
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 110%;
+	transition: background-size 2s ease-in;
+	-moz-transition: background-size 2s ease-in;
+	-ms-transition: background-size 2s ease-in;
+	-o-transition: background-size 2s ease-in;
+	-webkit-transition: background-size 2s ease-in;
+}
+
+#projects .section-content .project:hover{
+	background-size: 150%;
+	transition: background-size 5s ease-in;
+	-moz-transition: background-size 5s ease-in;
+	-ms-transition: background-size 5s ease-in;
+	-o-transition: background-size 5s ease-in;
+	-webkit-transition: background-size 5s ease-in;
+}
+
+#projects .section-content .project .project-name{
+	margin: 0;
+	position:absolute;
+	top: 30%;
+	color: #F05286;
+	font-weight: lighter;
+	font-size: 30pt;
+	text-align: center;
+	width: 100%;
+}
+
+#aestudio{
+	background-image: url('../img/project_banners/aestudio.png');
+}
+#haspie{
+	background-image: url('../img/project_banners/haspie.png');
+}
+#freaks{
+	background-image: url('../img/project_banners/freaksparty.png');
+}
+#decision{
+	background-image: url('../img/project_banners/decisioncube.png');
+}
+#illust{
+	background-image: url('../img/project_banners/ficontan.png');
+}
+
 #portrait{
 	max-width: 200px;
 	position: absolute;
 	right: -100px;
 	top: 125px;
 	border-radius: 100%;
-	border: 10px solid #CB99CC;
+	border: 10px solid #F05286;
 }
