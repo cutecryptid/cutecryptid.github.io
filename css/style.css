@@ -1,0 +1,116 @@
+body{
+	background: #FFF;
+	margin: 0;
+	padding: 0;
+	font-family: "Open Sans", sans-serif;
+	color: #222;
+}
+
+a, a:visited, a:hover, a:active {
+	color: #222;
+	text-decoration: none;
+}
+
+#header{
+	display: block;
+	position: relative;
+	height: 300px;
+	width: 100%;
+	background: #222;
+}
+
+#menu{
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	text-align: right;
+	color: #DDD;
+}
+
+#menu a{
+	color: #DDD;
+}
+
+#menu ul{
+	margin: 0;
+	padding: 0;
+}
+
+#menu ul li{
+	display: inline-block;
+}
+
+.section{
+	display: block;
+	width: 100%;
+	position: relative;
+}
+
+.section-title{
+	display: inline-block;
+	width: 30%;
+	position: absolute;
+	left: 0;
+	z-index: 200;
+}
+
+.section-title .title{
+	position: absolute;
+	bottom: 50px;
+	right: 0px;
+	left: 0px;
+	text-align: center;
+	margin: 0;
+	font-family: "Open Sans", sans-serif;
+	font-weight: lighter;
+	font-size: 50pt;
+}
+
+.section-content{
+	display: inline-block;
+	width: 70%;
+	position: relative;
+	left: 30%;
+	z-index: 100;
+}
+
+.title-fixed{
+	position: fixed;
+}
+
+#about .section-title{
+	background: #CB99CC;
+}
+
+#about .section-title .title{
+	color: #FFF;
+}
+
+#about .section-content{
+	background: #FFF;
+}
+
+#about .section-content .row{
+	padding: 110px;
+}
+
+
+
+
+#projects .section-title{
+	background: #FFF;
+}
+
+
+#projects .section-content{
+	background: #333;
+}
+
+#portrait{
+	max-width: 200px;
+	position: absolute;
+	right: -100px;
+	top: 125px;
+	border-radius: 100%;
+	border: 10px solid #CB99CC;
+}
