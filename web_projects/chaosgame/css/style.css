@@ -1,0 +1,31 @@
+body{
+  background-image: url('../img/sayagata-400px.png');
+}
+
+#wrap-content{
+  width: 80%;
+}
+
+#main-content{
+  margin-top: 30px;
+}
+
+.slider-input input{
+  display: block;
+  width: 100%;
+}
+
+#fractal-container{
+  margin-top: 30px;
+  padding: 20px;
+}
+
+#fractal-container #fractal{
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

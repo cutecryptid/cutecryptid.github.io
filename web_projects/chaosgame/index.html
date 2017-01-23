@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CHAOS GAME - HTML5 + JS Fractal Drawing</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./libs/material/dist/css/ripples.min.css">
+    <link rel="stylesheet" type="text/css" href="./libs/material/dist/css/bootstrap-material-design.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- JAVASCRIPT -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="./libs/material/dist/js/material.min.js"></script>
+    <script src="./libs/material/dist/js/ripples.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.2.0/nouislider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.0.4/wNumb.min.js"></script>
+    <script src="./js/sliders.js"></script>
+    <script src="./js/main.js"></script>
+  </head>
+  <body>
+    <div class='container' id="wrap-content">
+      <div class="row" id='main-content'>
+        <div class="display col-md-8 col-md-push-4" id='fractal-container'>
+          <canvas id="fractal"></canvas>
+        </div>
+        <div class="controls col-md-4 col-md-pull-8">
+          <h3>Controls</h3>
+          <h4>Sides</h4>
+          <div class="slider-input row">
+            <div class="col-xs-3">
+              <input id='side-value' type='text'/>
+            </div>
+            <div class="col-xs-9">
+              <div class='slider shor slider-material-blue' id='side-slider'></div>
+            </div>
+          </div>
+          <h4>Iterations</h4>
+          <div class="slider-input row">
+            <div class="col-xs-3">
+              <input id='iteration-value' type='text'/>
+            </div>
+            <div class="col-xs-9">
+              <div class='slider shor slider-material-blue' id='iteration-slider'></div>
+            </div>
+          </div>
+          <h4>Fraction</h4>
+          <div class="slider-input row">
+            <div class="col-xs-3">
+              <input id='fraction-value' type='text'/>
+            </div>
+            <div class="col-xs-9">
+              <div class='slider shor slider-material-blue' id='fraction-slider'></div>
+            </div>
+          </div>
+          <button type="button" id='start-stop-button' class="btn btn-lg btn-raised btn-info">GO!</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
