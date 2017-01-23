@@ -18,12 +18,12 @@ $('document').ready(function(){
   });
 
   noUiSlider.create(iterSlider, {
-    start: 2000,
+    start: 5000,
     connect: "lower",
     step: 5,
     range: {
-      min: 10,
-      max: 100000
+      min: 100,
+      max: 50000
     },
     format: wNumb({
   		decimals: 0
