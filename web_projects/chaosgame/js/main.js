@@ -8,9 +8,8 @@ $('document').ready(function(){
   var vertex = [];
 
 
-  var midpoint = function(p1, p2, fraction){
-    var f = eval(fraction);
-    return [Math.floor((p1[0] + p2[0])*f), Math.floor((p1[1] + p2[1])*f)]
+  var midpoint = function(p1, p2){
+    return [Math.floor((p1[0] + p2[0])/2), Math.floor((p1[1] + p2[1])/2)]
   }
 
   var drawOutline = function(sides, ctx){
@@ -37,15 +36,27 @@ $('document').ready(function(){
     ctx.stroke();
   }
 
-  var drawChaosGame = function(vertex, ctx, iter, fraction, randomstart){
+  var randomIndex = function(count, lastindex, repeatindex){
+    r = Math.floor((Math.random() * count));
+    if (!repeatindex){
+      while (r == lastindex){
+        r = Math.floor((Math.random() * count));
+      }
+    }
+    return r;
+  }
+
+  var drawChaosGame = function(vertex, ctx, iter, repeatvertex){
     var i = iter;
     var pivot = vertex[0];
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     drawOutline($('#side-value').val(), ctx);
     ctx.strokeStyle = "#000000";
     while (i > 0) {
-      var destination = vertex[Math.floor((Math.random() * vertex.length))];
-      var pivot = midpoint(pivot, destination, fraction);
+      var destinationindex = randomIndex(vertex.length, lastindex, repeatvertex);
+      var lastindex = destinationindex;
+      var destination = vertex[destinationindex];
+      var pivot = midpoint(pivot, destination);
       ctx.fillRect( pivot[0], pivot[1], 1, 1 );
       i = i-1;
     }
@@ -64,6 +75,6 @@ $('document').ready(function(){
   });
 
   $('#start-stop-button').click(function(){
-    drawChaosGame(vertex, ctx, $('#iteration-value').val(), $('#fraction-value').val(), $("#randomstart-checkbox").attr('checked'));
+    drawChaosGame(vertex, ctx, $('#iteration-value').val(), $("#repeat-vertex").prop('checked'));
   })
 });
