@@ -11,7 +11,7 @@ $('document').ready(function(){
     connect: "lower",
     range: {
       min: 3,
-      max: 12
+      max: 6
     },
     format: wNumb({
   		decimals: 0
