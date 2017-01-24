@@ -1,11 +1,9 @@
 $('document').ready(function(){
   var sideSlider = document.getElementById('side-slider');
   var iterSlider = document.getElementById('iteration-slider');
-  var exclSlider = document.getElementById('excluded-slider');
 
   var sideInput = document.getElementById('side-value');
   var iterInput = document.getElementById('iteration-value');
-  var exclInput = document.getElementById('excluded-value');
 
   noUiSlider.create(sideSlider, {
     start: 4,
@@ -33,19 +31,6 @@ $('document').ready(function(){
   	})
   });
 
-  noUiSlider.create(exclSlider, {
-    start: 1,
-    connect: "lower",
-    step: 1,
-    range: {
-      min: 1,
-      max: 4
-    },
-    format: wNumb({
-      decimals: 0
-    })
-  });
-
   sideSlider.noUiSlider.on('update', function( values, handle ) {
   	sideInput.value = values[handle];
   });
@@ -60,13 +45,5 @@ $('document').ready(function(){
 
   iterInput.addEventListener('change', function(){
     iterSlider.noUiSlider.set(this.value);
-  });
-
-  exclSlider.noUiSlider.on('update', function( values, handle ) {
-    exclInput.value = values[handle];
-  });
-
-  exclInput.addEventListener('change', function(){
-    exclSlider.noUiSlider.set(this.value);
   });
 });
