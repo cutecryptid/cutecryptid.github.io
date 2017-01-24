@@ -47,7 +47,6 @@ $('document').ready(function(){
         available.splice(available.indexOf(lastindex),1);
         break;
       case 'exclude-next':
-        var excl = $('#excluded-value').val();
         available.splice(available.indexOf(mod(lastindex+1,count)),1);
         break;
     }
