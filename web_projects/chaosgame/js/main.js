@@ -7,6 +7,10 @@ $('document').ready(function(){
   var ctx = canvas.getContext('2d');
   var vertex = [];
 
+  var mod = function(n, m) {
+    return ((n % m) + m) % m;
+  }
+
 
   var midpoint = function(p1, p2){
     return [Math.floor((p1[0] + p2[0])/2), Math.floor((p1[1] + p2[1])/2)]
@@ -37,20 +41,18 @@ $('document').ready(function(){
   }
 
   var nextIndex = function(count, lastindex, mode){
+    var available = Array.apply(null, {length: count}).map(Number.call, Number);
     switch(mode){
       case 'exclude-last':
-        r = Math.floor((Math.random() * count));
-        while (r == lastindex){
-          r = Math.floor((Math.random() * count));
-        }
+        available.splice(available.indexOf(lastindex),1);
         break;
-      case 'secuential':
-        r = ((lastindex+1)%count)
+      case 'exclude-next':
+        var excl = $('#excluded-value').val();
+        available.splice(available.indexOf(mod(lastindex+1,count)),1);
         break;
-      default:
-        r = Math.floor((Math.random() * count));
     }
-    return r;
+    r = Math.floor((Math.random() * available.length));
+    return available[r];
   }
 
   var drawChaosStep = function(vertex, ctx, iter, mode){
