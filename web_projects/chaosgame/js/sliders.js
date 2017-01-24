@@ -22,8 +22,8 @@ $('document').ready(function(){
     connect: "lower",
     step: 5,
     range: {
-      min: 100,
-      max: 50000
+      min: 500,
+      max: 100000
     },
     format: wNumb({
   		decimals: 0

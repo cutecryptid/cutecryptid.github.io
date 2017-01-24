@@ -36,25 +36,33 @@ $('document').ready(function(){
     ctx.stroke();
   }
 
-  var randomIndex = function(count, lastindex, repeatindex){
-    r = Math.floor((Math.random() * count));
-    if (!repeatindex){
-      while (r == lastindex){
+  var nextIndex = function(count, lastindex, mode){
+    switch(mode){
+      case 'exclude-last':
         r = Math.floor((Math.random() * count));
-      }
+        while (r == lastindex){
+          r = Math.floor((Math.random() * count));
+        }
+        break;
+      case 'secuential':
+        r = ((lastindex+1)%count)
+        break;
+      default:
+        r = Math.floor((Math.random() * count));
     }
     return r;
   }
 
-  var drawChaosGame = function(vertex, ctx, iter, repeatvertex){
+  var drawChaosStep = function(vertex, ctx, iter, mode){
     var i = iter;
     var pivot = vertex[0];
+    var lastindex = 0;
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     drawOutline($('#side-value').val(), ctx);
     ctx.strokeStyle = "#000000";
     while (i > 0) {
-      var destinationindex = randomIndex(vertex.length, lastindex, repeatvertex);
-      var lastindex = destinationindex;
+      var destinationindex = nextIndex(vertex.length, lastindex, mode);
+      lastindex = destinationindex;
       var destination = vertex[destinationindex];
       var pivot = midpoint(pivot, destination);
       ctx.fillRect( pivot[0], pivot[1], 1, 1 );
@@ -74,7 +82,12 @@ $('document').ready(function(){
     drawOutline($('#side-value').val(), ctx);
   });
 
+  $('#vertex-buttons a').click(function(){
+    $(this).siblings().removeClass('btn-info');
+    $(this).addClass('btn-info');
+  })
+
   $('#start-stop-button').click(function(){
-    drawChaosGame(vertex, ctx, $('#iteration-value').val(), $("#repeat-vertex").prop('checked'));
+    drawChaosStep(vertex, ctx, $('#iteration-value').val(), $('#vertex-buttons .btn-info').attr('id'));
   })
 });
