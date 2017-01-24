@@ -29,3 +29,7 @@ body{
   margin-right: auto;
   display: block;
 }
+
+#info{
+  text-align: justify;
+}
