@@ -40,7 +40,9 @@ $('document').ready(function(){
     ctx.stroke();
   }
 
-  var nextIndex = function(count, lastindex, mode){
+  var nextIndex = function(count, lastindexlist, mode){
+    var lastindex = lastindexlist[lastindexlist.length-1];
+    var prelastindex = lastindexlist[lastindexlist.length-2];
     var available = Array.apply(null, {length: count}).map(Number.call, Number);
     switch(mode){
       case 'exclude-last':
@@ -48,6 +50,17 @@ $('document').ready(function(){
         break;
       case 'exclude-next':
         available.splice(available.indexOf(mod(lastindex+1,count)),1);
+        break;
+      case 'exclude-skip':
+        available.splice(available.indexOf(mod(lastindex+2,count)),1);
+        break;
+      case 'exclude-fringe':
+        available.splice(available.indexOf(mod(lastindex+1,count)),1);
+        available.splice(available.indexOf(mod(prelastindex+count-1,count)),1);
+        break;
+      case 'exclude-distance':
+        available.splice(available.indexOf(mod(prelastindex+2,count)),1);
+        available.splice(available.indexOf(mod(lastindex+2,count)),1);
         break;
     }
     r = Math.floor((Math.random() * available.length));
@@ -57,13 +70,13 @@ $('document').ready(function(){
   var drawChaosStep = function(vertex, ctx, iter, mode){
     var i = iter;
     var pivot = vertex[0];
-    var lastindex = 0;
+    var lastindexlist = [0,0];
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     drawOutline($('#side-value').val(), ctx);
     ctx.strokeStyle = "#000000";
     while (i > 0) {
-      var destinationindex = nextIndex(vertex.length, lastindex, mode);
-      lastindex = destinationindex;
+      var destinationindex = nextIndex(vertex.length, lastindexlist, mode);
+      lastindexlist.push(destinationindex);
       var destination = vertex[destinationindex];
       var pivot = midpoint(pivot, destination);
       ctx.fillRect( pivot[0], pivot[1], 1, 1 );
@@ -83,12 +96,12 @@ $('document').ready(function(){
     drawOutline($('#side-value').val(), ctx);
   });
 
-  $('#vertex-buttons a').click(function(){
-    $(this).siblings().removeClass('btn-info');
+  $('.vertex-buttons a').click(function(){
+    $('.vertex-buttons').children().removeClass('btn-info');
     $(this).addClass('btn-info');
   })
 
   $('#start-stop-button').click(function(){
-    drawChaosStep(vertex, ctx, $('#iteration-value').val(), $('#vertex-buttons .btn-info').attr('id'));
+    drawChaosStep(vertex, ctx, $('#iteration-value').val(), $('.vertex-buttons .btn-info').attr('id'));
   })
 });
