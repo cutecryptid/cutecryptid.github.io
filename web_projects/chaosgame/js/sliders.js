@@ -6,7 +6,7 @@ $('document').ready(function(){
   var iterInput = document.getElementById('iteration-value');
 
   noUiSlider.create(sideSlider, {
-    start: 4,
+    start: 3,
     step: 1,
     connect: "lower",
     range: {
