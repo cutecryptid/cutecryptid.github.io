@@ -73,12 +73,13 @@ $('document').ready(function(){
     var lastindexlist = [0,0];
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     drawOutline($('#side-value').val(), ctx);
-    ctx.strokeStyle = "#000000";
     while (i > 0) {
       var destinationindex = nextIndex(vertex.length, lastindexlist, mode);
       lastindexlist.push(destinationindex);
       var destination = vertex[destinationindex];
       var pivot = midpoint(pivot, destination);
+      var redint = Math.floor((i*255)/iter);
+      ctx.fillStyle = "rgb("+redint+",0,0)";
       ctx.fillRect( pivot[0], pivot[1], 1, 1 );
       i = i-1;
     }
