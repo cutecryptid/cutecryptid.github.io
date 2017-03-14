@@ -18,10 +18,11 @@ a, a:visited, a:hover, a:active {
 	height: 250px;
 	width: 100%;
 	background: #222;
-	background-image: url('../img/tricre_logo.png');
-	background-repeat: no-repeat;
-	background-size: 50%;
-	background-position: center, center;
+}
+
+#header #logo{
+	max-height: 450px;
+	margin-top: -100px;
 }
 
 #menu{
@@ -341,6 +342,11 @@ box-shadow: inset 0px 2px 10px 0px rgba(0,0,0,0.5);
 
 	#header{
 		height: 150px;
+	}
+
+	#header #logo{
+		max-height: 200px;
+		margin-top: -20px;
 	}
 
 
