@@ -171,7 +171,7 @@ box-shadow: inset 0px 2px 10px 0px rgba(0,0,0,0.5);
 	border-radius: 10px;
 	font-size: 25px;
 	color: #FFF !important;
-	text-decoration: none;	
+	text-decoration: none;
 	background-color: #F05286;
 	border-bottom: 5px solid #8F3B56;
 	text-shadow: 0px -2px #8F3B56;
@@ -277,6 +277,9 @@ box-shadow: inset 0px 2px 10px 0px rgba(0,0,0,0.5);
 #aestudio{
 	background-image: url('../img/project_banners/aestudio.png');
 }
+#chaos{
+	background-image: url('../img/project_banners/chaosgame.png');
+}
 #haspie{
 	background-image: url('../img/project_banners/haspie.png');
 }
@@ -340,7 +343,7 @@ box-shadow: inset 0px 2px 10px 0px rgba(0,0,0,0.5);
 		height: 150px;
 	}
 
-	
+
 
 	.section-content .row{
 		padding: 20px;
@@ -353,7 +356,7 @@ box-shadow: inset 0px 2px 10px 0px rgba(0,0,0,0.5);
 }
 
 @media screen and (max-width: 1160px){
-	
+
 	#portrait{
 		max-width: 150px;
 		right: -75px;
