@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<main>\n<div id=\"ballot-box\">\n<h1>Ballot Box</h1>\n<div class=\"row justify-content-center\">\n    <div class=\"col-md-6\">\n        <input [(ngModel)]=\"boxsize\" [disabled]=\"box.length || pulledBallots.length == boxsize\" placeholder=\"Number of Ballots\"/>\n        <button type=\"button\" [hidden]=\"box.length || pulledBallots.length == boxsize\"  class=\"btn btn-info btn-lg shuffle\" \n        (click)=\"shuffleBox()\">SHUFFLE!</button>\n    </div>\n</div>\n\n<div class=\"row justify-content-center\" id=\"draw-ballots\" *ngIf=\"box.length || pulledBallots.length == boxsize\">\n        <div class=\"col-md-2\">\n            <button type=\"button\" class=\"draw btn btn-danger btn-lg\"\n            (click)=\"clearBox()\">CLEAR</button>\n        </div>\n        <div class=\"col-md-2\">\n            <button type=\"button\" class=\"draw btn btn-warning btn-lg\"\n            (click)=\"resetBox()\">RESET</button>\n        </div>\n        <div class=\"col-md-2\">\n            <button type=\"button\" class=\"draw btn btn-success btn-lg\"\n            (click)=\"drawBallot()\">DRAW!</button>\n        </div>\n</div>\n<div class=\"row justify-content-center\" id=\"pulled-ballots\" *ngIf=\"pulledBallots\">\n    <div class=\"col-md-6\" id=\"ballot-container\">\n        <ul class=\"ballots\">\n                <li *ngFor=\"let ballot of pulledBallots\" class=\"ballot badge badge badge-info\">\n                    {{ballot}}\n                </li>\n            </ul>\n    </div>\n</div>\n</div>\n</main>");
+/* harmony default export */ __webpack_exports__["default"] = ("<main>\n<div id=\"ballot-box\">\n<h1>Ballot Box</h1>\n<div class=\"row justify-content-center\">\n    <div class=\"col-md-6\">\n        <input [(ngModel)]=\"boxsize\" [disabled]=\"isBoxEmpty()\" placeholder=\"Number of Ballots\"/>\n        <button type=\"button\" [hidden]=\"isBoxEmpty()\"  class=\"btn btn-info btn-lg shuffle\" \n        (click)=\"shuffleBox()\">SHUFFLE!</button>\n    </div>\n</div>\n\n<div class=\"row justify-content-center\" id=\"draw-ballots\" *ngIf=\"isBoxEmpty()\">\n        <div class=\"col-md-2\">\n            <button type=\"button\" class=\"draw btn btn-danger btn-lg\"\n            (click)=\"clearBox()\">CLEAR</button>\n        </div>\n        <div class=\"col-md-2\">\n            <button type=\"button\" class=\"draw btn btn-warning btn-lg\"\n            (click)=\"resetBox()\">RESET</button>\n        </div>\n        <div class=\"col-md-2\">\n            <button type=\"button\" class=\"draw btn btn-success btn-lg\"\n            (click)=\"drawBallot()\">DRAW!</button>\n        </div>\n</div>\n<div class=\"row justify-content-center\" id=\"pulled-ballots\" *ngIf=\"pulledBallots\">\n    <div class=\"col-md-6\" id=\"ballot-container\">\n        <ul class=\"ballots\">\n                <li *ngFor=\"let ballot of pulledBallots\" class=\"ballot badge badge badge-info\">\n                    {{ballot}}\n                </li>\n            </ul>\n    </div>\n</div>\n</div>\n</main>");
 
 /***/ }),
 
@@ -506,17 +506,26 @@ let DashboardComponent = class DashboardComponent {
         }
     }
     shuffleBox() {
+        this.fixedBoxSize = parseInt(this.boxsize);
         this.pulledBallots = [];
         this.box = this.ballotBoxService.createBallotBox(parseInt(this.boxsize));
         this.box = this.shuffle(this.box);
     }
     clearBox() {
+        this.fixedBoxSize = undefined;
         this.pulledBallots = [];
         this.box = [];
     }
     resetBox() {
+        this.fixedBoxSize = undefined;
         this.pulledBallots = [];
         this.shuffleBox();
+    }
+    isBoxEmpty() {
+        if (this.fixedBoxSize) {
+            return this.box.length == 0 || this.fixedBoxSize - this.pulledBallots.length != 0;
+        }
+        return false;
     }
     ngOnInit() {
     }
