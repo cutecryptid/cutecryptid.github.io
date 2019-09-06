@@ -484,17 +484,13 @@ let DashboardComponent = class DashboardComponent {
         if (a.length == 11) {
             var t = a.indexOf(6);
             var d;
-            if (t > 3) {
-                d = a[3];
-                a[3] = a[t];
-                a[t] = d;
-            }
+            d = a[3];
+            a[3] = a[t];
+            a[t] = d;
             t = a.indexOf(9);
-            if (t > 3) {
-                d = a[1];
-                a[1] = a[t];
-                a[t] = d;
-            }
+            d = a[1];
+            a[1] = a[t];
+            a[t] = d;
         }
         return a;
     }
