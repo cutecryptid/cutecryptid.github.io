@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/web_projects/ff12characterplanner/static/css/main.e0c05485.chunk.css",
+    "main.js": "/web_projects/ff12characterplanner/static/js/main.e06c8114.chunk.js",
+    "main.js.map": "/web_projects/ff12characterplanner/static/js/main.e06c8114.chunk.js.map",
+    "runtime-main.js": "/web_projects/ff12characterplanner/static/js/runtime-main.1f110b70.js",
+    "runtime-main.js.map": "/web_projects/ff12characterplanner/static/js/runtime-main.1f110b70.js.map",
+    "static/css/2.659bcfad.chunk.css": "/web_projects/ff12characterplanner/static/css/2.659bcfad.chunk.css",
+    "static/js/2.d27942dd.chunk.js": "/web_projects/ff12characterplanner/static/js/2.d27942dd.chunk.js",
+    "static/js/2.d27942dd.chunk.js.map": "/web_projects/ff12characterplanner/static/js/2.d27942dd.chunk.js.map",
+    "index.html": "/web_projects/ff12characterplanner/index.html",
+    "precache-manifest.a18b0dc5edac2e574e04b8fb9c803f47.js": "/web_projects/ff12characterplanner/precache-manifest.a18b0dc5edac2e574e04b8fb9c803f47.js",
+    "service-worker.js": "/web_projects/ff12characterplanner/service-worker.js",
+    "static/css/2.659bcfad.chunk.css.map": "/web_projects/ff12characterplanner/static/css/2.659bcfad.chunk.css.map",
+    "static/css/main.e0c05485.chunk.css.map": "/web_projects/ff12characterplanner/static/css/main.e0c05485.chunk.css.map",
+    "static/js/2.d27942dd.chunk.js.LICENSE.txt": "/web_projects/ff12characterplanner/static/js/2.d27942dd.chunk.js.LICENSE.txt",
+    "static/media/Aquarius.svg": "/web_projects/ff12characterplanner/static/media/Aquarius.08291a1c.svg",
+    "static/media/Aries.svg": "/web_projects/ff12characterplanner/static/media/Aries.4378bbd9.svg",
+    "static/media/Cancer.svg": "/web_projects/ff12characterplanner/static/media/Cancer.0a707a93.svg",
+    "static/media/Capricorn.svg": "/web_projects/ff12characterplanner/static/media/Capricorn.2b0112cb.svg",
+    "static/media/Gemini.svg": "/web_projects/ff12characterplanner/static/media/Gemini.8a7edacf.svg",
+    "static/media/Leo.svg": "/web_projects/ff12characterplanner/static/media/Leo.0cb0ecbe.svg",
+    "static/media/Libra.svg": "/web_projects/ff12characterplanner/static/media/Libra.dc38429d.svg",
+    "static/media/Pisces.svg": "/web_projects/ff12characterplanner/static/media/Pisces.852a5982.svg",
+    "static/media/Sagittarius.svg": "/web_projects/ff12characterplanner/static/media/Sagittarius.0d987217.svg",
+    "static/media/Scorpio.svg": "/web_projects/ff12characterplanner/static/media/Scorpio.3d10e116.svg",
+    "static/media/Taurus.svg": "/web_projects/ff12characterplanner/static/media/Taurus.66b60428.svg",
+    "static/media/Virgo.svg": "/web_projects/ff12characterplanner/static/media/Virgo.031563fa.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1f110b70.js",
+    "static/css/2.659bcfad.chunk.css",
+    "static/js/2.d27942dd.chunk.js",
+    "static/css/main.e0c05485.chunk.css",
+    "static/js/main.e06c8114.chunk.js"
+  ]
+}
