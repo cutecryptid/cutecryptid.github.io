@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1cad206ae82fe754aa6f0394174ed835",
+    "revision": "adc54895624782cf45dc01f3402b0fda",
     "url": "/web_projects/ff12characterplanner/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/web_projects/ff12characterplanner/static/css/2.659bcfad.chunk.css"
   },
   {
-    "revision": "30e1c7f042e9e5138e41",
-    "url": "/web_projects/ff12characterplanner/static/css/main.e0c05485.chunk.css"
+    "revision": "17a7a1db3e460b40692f",
+    "url": "/web_projects/ff12characterplanner/static/css/main.0337d5da.chunk.css"
   },
   {
     "revision": "4e0377aa4d82383a2dc5",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/web_projects/ff12characterplanner/static/js/2.d27942dd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "30e1c7f042e9e5138e41",
+    "revision": "17a7a1db3e460b40692f",
     "url": "/web_projects/ff12characterplanner/static/js/main.e06c8114.chunk.js"
   },
   {
