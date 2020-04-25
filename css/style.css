@@ -293,6 +293,9 @@ box-shadow: inset 0px 2px 10px 0px rgba(0,0,0,0.5);
 #illust{
 	background-image: url('../img/project_banners/ficontan.png');
 }
+#ff12planner{
+	background-image: url('../img/project_banners/ff12planner.png');
+}
 
 #portrait{
 	max-width: 200px;
